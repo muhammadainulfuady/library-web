@@ -87,3 +87,11 @@ body {
     max-width: 70%;
   }
 }
+@media screen and (max-width: 545px) {
+  .card-container {
+    max-width: 100%;
+  }
+  .card-container .input-users {
+    gap: 10px;
+  }
+}
