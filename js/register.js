@@ -1,15 +1,3 @@
-// login area
-// id dari button login
-let btn_submit_login = document.querySelector("#submit-login");
-let btn_login_reset = document.querySelector("#reset-login");
-
-// merupakan id dari input yang ada di dalam login.html
-let login_us = document.querySelector("#us-login");
-let login_pw = document.querySelector("#pw-login");
-
-// id dari form login
-let form_login = document.querySelector("#form-login");
-
 // register area
 // merupakan id dari input yang ada di dalam register.html
 let register_us = document.querySelector("#us-register");
@@ -25,6 +13,7 @@ let btn_reset_regis = document.querySelector("#reset-regis");
 
 // obj kosong untuk menyimpan data ke local-storage
 let obj = {};
+let put_data = localStorage.getItem("my-key-value");
 
 // event saat register
 form_regis.addEventListener("submit", function (e) {
@@ -36,12 +25,4 @@ form_regis.addEventListener("submit", function (e) {
   localStorage.setItem("my-key-value", JSON.stringify(obj));
   window.location = "/index.html";
   alert("Register berhasil!!!");
-});
-
-// event saat login
-form_login.addEventListener("submit", function (e) {
-  localStorage.getItem(value_input_login_username, value_input_login_password);
-  e.defaultPrevented();
-  let value_input_login_username = login_pw.value;
-  let value_input_login_password = login_us.value;
 });
