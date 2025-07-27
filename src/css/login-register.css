@@ -23,11 +23,17 @@ body {
   margin: 95px auto;
   background-color: var(--warna-semi-bg);
   max-width: 40%;
-  border-radius: 20px;
+  border-radius: 20px 0px 20px 0px;
 }
 
 .card-container h1 {
+  font-style: italic;
+  text-shadow: 1px 1px 2px var(--warna-semi-bg);
   text-align: center;
+  background-color: var(--warna-semi-semi-bg);
+  overflow: hidden;
+  border-radius: 20px 0px 20px 0px;
+  color: var(--warna-white);
 }
 
 .card-container .input-users {
@@ -38,7 +44,7 @@ body {
 }
 
 .card-container .input-users input {
-  border: 3px solid black;
+  border: 3px solid var(--warna-semi-semi-bg);
   border-radius: 10px;
   height: 38px;
   width: 280px;
@@ -98,7 +104,7 @@ body {
 }
 @media screen and (max-width: 545px) {
   .card-container {
-    max-width: 100%;
+    max-width: 90%;
   }
   .card-container .input-users {
     gap: 10px;
