@@ -82,6 +82,15 @@ body {
   cursor: pointer;
 }
 
+.register-menu a {
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  margin: 15px;
+  font-weight: bold;
+  color: blue;
+}
+
 @media screen and (max-width: 900px) {
   .card-container {
     max-width: 70%;

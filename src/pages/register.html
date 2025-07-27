@@ -17,23 +17,25 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>Login Form</title>
+    <title>Register Form</title>
   </head>
   <body>
     <div class="container">
-      <form id="form-login">
+      <form id="form-regis">
         <div class="card-container">
-          <h1>LOGIN PAGE</h1>
+          <h1>REGISTER PAGE</h1>
           <div class="input-users">
             <label for="username">
               <i class="fa fa-user" aria-hidden="true"></i>
             </label>
             <input
-              id="us-login"
+              id="us-register"
               type="text"
               name="username"
               id="username"
               placeholder="Your Username"
+              minlength="5"
+              maxlength="50"
               required
             />
           </div>
@@ -42,20 +44,36 @@
               <i class="fa fa-key" aria-hidden="true"></i>
             </label>
             <input
-              id="pw-login"
+              id="pw-register"
               type="password"
               name="password"
               id="password"
               placeholder="Your Password"
+              minlength="5"
+              maxlength="10"
               required
             />
           </div>
-          <div class="register-menu">
-            <a href="./src/pages/register.html"><p>Register!</p></a>
+          <div class="input-users">
+            <label for="addres">
+              <i class="fa fa-address-card" aria-hidden="true"></i>
+            </label>
+            <input
+              id="addres-register"
+              type="text"
+              name="addres"
+              id="addres"
+              placeholder="Your Addres"
+              minlength="5"
+              maxlength="100"
+              required
+            />
           </div>
           <div class="btn">
-            <button type="submit" class="regis" id="submit-login">LOGIN</button>
-            <button type="reset" class="reset" id="reset-login">RESET</button>
+            <button type="submit" class="regis" id="submit-regis">
+              Register
+            </button>
+            <button type="reset" class="reset" id="reset-regis">Reset</button>
           </div>
         </div>
       </form>
