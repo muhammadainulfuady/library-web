@@ -47,7 +47,7 @@ body {
   border: 3px solid var(--warna-semi-semi-bg);
   border-radius: 10px;
   height: 38px;
-  width: 280px;
+  width: 300px;
   font-size: 20px;
   text-align: justify;
   font-weight: bold;
@@ -108,5 +108,14 @@ body {
   }
   .card-container .input-users {
     gap: 10px;
+  }
+}
+@media screen and (max-width: 353px) {
+  .card-container {
+    max-width: 90%;
+  }
+  .card-container .input-users input {
+    gap: 10px;
+    max-width: 200px;
   }
 }
