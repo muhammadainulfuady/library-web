@@ -19,9 +19,9 @@ body {
   background-color: var(--warna-bg);
 }
 
-/* navbar area */
+/* navbar-all */
 .navbar {
-  background-color: var(--warna-semi-bg);
+  background-color: var(--warna-semi-semi-bg);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
