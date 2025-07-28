@@ -32,7 +32,7 @@ form_login.addEventListener("submit", function (e) {
   }
   if (flag == true) {
     alert("Login berhasil silahkan masuk!!");
-    window.location = "../pages/home.html";
+    window.location = "home.html";
   } else {
     alert("Maaf username/pasword anda salah!!");
   }
