@@ -31,8 +31,8 @@ form_login.addEventListener("submit", function (e) {
     }
   }
   if (flag == true) {
-    alert("Login berhasil silahkan masuk!!");
     window.location = "../src/pages/home.html";
+    alert("Login berhasil silahkan masuk!!");
   } else {
     alert("Maaf username/pasword anda salah!!");
   }

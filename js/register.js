@@ -24,6 +24,6 @@ form_regis.addEventListener("submit", function (e) {
   let value_input_register_addres = register_addres.value;
   obj[value_input_register_username] = value_input_register_password;
   localStorage.setItem("my-key-value", JSON.stringify(obj));
-  window.location = "../index.html";
   alert("Register berhasil!!!");
+  window.location = "../index.html";
 });
