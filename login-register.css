@@ -20,7 +20,7 @@ body {
 }
 
 .card-container {
-  margin: 95px auto;
+  margin: 30px auto;
   background-color: var(--warna-semi-bg);
   max-width: 40%;
   border-radius: 20px 0px 20px 0px;
