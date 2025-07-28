@@ -1,5 +1,6 @@
 // register area
 // merupakan id dari input yang ada di dalam register.html
+alert("halooo");
 let register_us = document.querySelector("#us-register");
 let register_pw = document.querySelector("#pw-register");
 let register_addres = document.querySelector("#addres-register");
@@ -23,6 +24,6 @@ form_regis.addEventListener("submit", function (e) {
   let value_input_register_addres = register_addres.value;
   obj[value_input_register_username] = value_input_register_password;
   localStorage.setItem("my-key-value", JSON.stringify(obj));
-  window.location = "../index.html";
+  window.location = "/index.html";
   alert("Register berhasil!!!");
 });
