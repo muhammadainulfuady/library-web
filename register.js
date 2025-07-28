@@ -25,14 +25,22 @@ form_regis.addEventListener("submit", function (e) {
   let value_input_register_password = register_pw.value;
   let value_input_register_addres = register_addres.value;
   let value_input_register_date = register_date.value;
-  let value_input_register_img = register_img.value;
   username_password[value_input_register_username] =
     value_input_register_password;
   addres_date[value_input_register_addres] = value_input_register_date;
-  img_users[value_input_register_img] = "none";
+  let value_input_register_img = register_img.files[0];
+  let reader = new FileReader();
+  reader.onload = function () {
+    let base64img = reader.result;
+    img_users["profile"] = base64img;
+    localStorage.setItem("img-user-profile", JSON.stringify(img_users));
+  };
+  // Kalau user upload gambar, baru convert
+  if (value_input_register_img) {
+    reader.readAsDataURL(value_input_register_img);
+  }
   localStorage.setItem("my-key-value", JSON.stringify(username_password));
   localStorage.setItem("addres-date", JSON.stringify(addres_date));
-  localStorage.setItem("img-users-profile", JSON.stringify(img_users));
   alert("Register berhasil!!!");
   window.location = "index.html";
 });

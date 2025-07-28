@@ -8,6 +8,11 @@ let convert_json_to_obj_username_password = JSON.parse(
 let put_data_local_addres_date = localStorage.getItem("addres-date");
 let convert_json_to_obj_addres_date = JSON.parse(put_data_local_addres_date);
 
+// mengambil data local storage bagian img dan none
+let put_data_local_img_none = localStorage.getItem("img-user-profile");
+let convert_json_to_obj_img_none = JSON.parse(put_data_local_img_none);
+// console.log(convert_json_to_obj_img_none);
+
 // fungsi untuk mengambil data dari local storage yaitu username dari user yang telah register tadi
 const put_username = function (username_users) {
   for (let key in username_users) {
@@ -43,3 +48,16 @@ const put_date = function (date_users) {
   return date_users;
 };
 put_date(convert_json_to_obj_addres_date);
+
+// fungsi untuk mengambil data dari local storage yaitu foto profile dari user yang telah register tadi
+const put_img = function (img_users) {
+  for (let key in img_users) {
+    let put_profile_img = document.querySelector("#profile-img");
+    let create_p_for_profile_img = document.createElement("p");
+    create_p_for_profile_img.innerHTML = `<img src="${img_users[key]}" alt"">`;
+    put_profile_img.appendChild(create_p_for_profile_img);
+    console.log(key);
+  }
+  return img_users;
+};
+put_img(convert_json_to_obj_img_none);
