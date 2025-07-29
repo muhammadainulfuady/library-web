@@ -89,10 +89,10 @@ const add_book = function (book_add) {
     let create_div_add_book = document.createElement("div");
     create_div_add_book.classList = "edited-input-menu";
     create_div_add_book.innerHTML = `
-    <label for="title-book">Masukkan tahun terbit</label>
-    <input type="text" name="title-book" id="title-book" />
+    <label for="year-book">Masukkan tahun terbit</label>
+    <input type="text" name="year-book" id="year-book" maxlength="4" required/>
     <label for="title-book">Masukkan judul buku</label>
-    <input type="text" name="title-book" id="title-book" />
+    <input type="text" name="title-book" id="title-book" maxlength="100" required />
     <button type="submit"><p>Kirim</p></button>
     `;
     put_class_add_book.appendChild(create_div_add_book);
