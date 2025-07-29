@@ -115,8 +115,38 @@ body {
   margin: 10px;
 }
 
+.profile-users-two {
+  background-color: #eeecec;
+  max-width: 50%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.profile-users-two p {
+  text-align: center;
+  background-color: #d1cdcd;
+  margin: 10px;
+  max-width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 20px 0px 30px 0px;
+  color: var(--reset);
+}
+
+.profile-users-two h1 {
+  text-align: center;
+  color: var(--regis);
+  margin: 10px;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 440px) {
   .profile-users {
+    max-width: 80%;
+  }
+
+  .profile-users-two {
     max-width: 80%;
   }
 }

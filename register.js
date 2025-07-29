@@ -6,6 +6,7 @@ let register_addres = document.querySelector("#addres-register");
 let register_date = document.querySelector("#date-register");
 let register_img = document.querySelector("#profile-register");
 
+
 // id dari form registrasi
 let form_regis = document.querySelector("#form-regis");
 

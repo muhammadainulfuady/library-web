@@ -13,6 +13,7 @@ let put_data_local_img_none = localStorage.getItem("img-user-profile");
 let convert_json_to_obj_img_none = JSON.parse(put_data_local_img_none);
 // console.log(convert_json_to_obj_img_none);
 
+// 1
 // fungsi untuk mengambil data dari local storage yaitu username dari user yang telah register tadi
 const put_username = function (username_users) {
   for (let key in username_users) {
@@ -24,6 +25,19 @@ const put_username = function (username_users) {
   return username_users;
 };
 put_username(convert_json_to_obj_username_password);
+
+// 2
+// fungsi untuk mengambil data dari local storage yaitu username dari user yang telah register tadi
+const put_username_two = function (username_users_two) {
+  for (let key in username_users_two) {
+    let put_profile_username_two = document.querySelector(".profile-users-two");
+    let create_p_for_profile_username_two = document.createElement("p");
+    create_p_for_profile_username_two.innerHTML = key;
+    put_profile_username_two.appendChild(create_p_for_profile_username_two);
+  }
+  return username_users_two;
+};
+put_username_two(convert_json_to_obj_username_password);
 
 // fungsi untuk mengambil data dari local storage yaitu alamat dari user yang telah register tadi
 const put_addres = function (addres_users) {
