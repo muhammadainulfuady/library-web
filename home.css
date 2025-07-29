@@ -21,6 +21,7 @@ html {
 
 body {
   background-color: var(--warna-bg);
+  padding-bottom: 800px;
 }
 
 /* navbar-all */
@@ -124,6 +125,61 @@ body {
   font-style: italic;
   text-transform: uppercase;
 }
+
+/* main-menu */
+.main-menu {
+  margin-top: 20px;
+}
+
+.main-menu h3 {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.main-menu .menu-button {
+  display: flex;
+  margin: 10px auto;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.main-menu .menu-button button {
+  border: 2px solid var(--warna-semi-bg);
+  background-color: var(--warna-black);
+  color: var(--warna-white);
+  text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.main-menu .menu-button button:hover {
+  background-color: #1f1e1e;
+  text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
+}
+
+/* footer */
+/* section.footer {
+  background-color: var(--warna-semi-semi-bg);
+  color: var(--warna-white);
+  text-shadow: 1px 4px 9px var(--warna-black);
+  text-align: center;
+  padding: 20px;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: bold;
+  word-spacing: 5px;
+} */
 
 @media screen and (max-width: 440px) {
   .profile-users {
