@@ -85,16 +85,18 @@ let put_btn_delete_book = document.querySelector("#hapus-buku");
 // fungsi untuk membuat tampilan di menu add_book
 const add_book = function (book_add) {
   book_add.addEventListener("click", function () {
-    let put_class_add_book = document.querySelector(".add-book");
+    let put_class_add_book = document.querySelector("#regis-add-book");
     let create_div_add_book = document.createElement("div");
     create_div_add_book.classList = "edited-input-menu";
     create_div_add_book.innerHTML = `
     <label for="title-book">Masukkan tahun terbit</label>
     <input type="text" name="title-book" id="title-book" />
     <label for="title-book">Masukkan judul buku</label>
-    <input type="text" name="title-book" id="title-book" />`;
+    <input type="text" name="title-book" id="title-book" />
+    <button type="submit"><p>Kirim</p></button>
+    `;
     put_class_add_book.appendChild(create_div_add_book);
-    console.log(create_div_add_book);
+    console.log(put_class_add_book);
   });
   return book_add;
 };
