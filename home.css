@@ -37,22 +37,6 @@ body {
   border-radius: 50%;
 }
 
-.navbar ul {
-  display: flex;
-  gap: 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.navbar ul li {
-  list-style: none;
-}
-
-.navbar ul li a {
-  color: var(--warna-black);
-  text-decoration: none;
-}
-
 .navbar .search {
   display: flex;
   justify-content: center;
@@ -105,7 +89,7 @@ body {
 .profile-users img {
   display: block;
   margin: 0 auto;
-  width: 100px;
+  width: 150px;
   border-radius: 10px;
 }
 
