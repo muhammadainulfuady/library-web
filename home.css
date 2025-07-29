@@ -153,7 +153,7 @@ body {
   text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
   font-size: 20px;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 10px 0px 10px 0px;
   text-transform: capitalize;
   display: flex;
   align-items: center;
@@ -166,6 +166,43 @@ body {
 .main-menu .menu-button button:hover {
   background-color: #1f1e1e;
   text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
+}
+
+/* menu pada button */
+.edited-input-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  background-color: var(--warna-semi-semi-bg);
+  margin: 10px auto;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.edited-input-menu label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  background-color: var(--warna-semi-bg);
+  text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
+  padding: 5px;
+  height: 30px;
+  border-radius: 10px 0px 10px 0px;
+  width: 100%;
+  font-style: italic;
+}
+
+.edited-input-menu input {
+  width: 100%;
+  font-size: 20px;
+  height: 30px;
+  padding: 5px;
+  border: 2px solid var(--warna-black);
+  border-radius: 10px 0px 10px 0px;
 }
 
 /* footer */
@@ -188,5 +225,11 @@ body {
 
   .profile-users-two {
     max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .edited-input-menu {
+    max-width: 99%;
   }
 }

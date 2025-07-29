@@ -70,8 +70,32 @@ const put_img = function (img_users) {
     let create_p_for_profile_img = document.createElement("p");
     create_p_for_profile_img.innerHTML = `<img src="${img_users[key]}" alt"">`;
     put_profile_img.appendChild(create_p_for_profile_img);
-    console.log(key);
   }
   return img_users;
 };
 put_img(convert_json_to_obj_img_none);
+
+// kode berikut merupakan button dari id main-menu
+let put_btn_add_book = document.querySelector("#tambah-buku");
+let put_btn_show_book = document.querySelector("#tampilkan-buku");
+let put_btn_search_book = document.querySelector("#cari-buku");
+let put_btn_tebrit_book = document.querySelector("#terbit-buku");
+let put_btn_delete_book = document.querySelector("#hapus-buku");
+
+// fungsi untuk membuat tampilan di menu add_book
+const add_book = function (book_add) {
+  book_add.addEventListener("click", function () {
+    let put_class_add_book = document.querySelector(".add-book");
+    let create_div_add_book = document.createElement("div");
+    create_div_add_book.classList = "edited-input-menu";
+    create_div_add_book.innerHTML = `
+    <label for="title-book">Masukkan tahun terbit</label>
+    <input type="text" name="title-book" id="title-book" />
+    <label for="title-book">Masukkan judul buku</label>
+    <input type="text" name="title-book" id="title-book" />`;
+    put_class_add_book.appendChild(create_div_add_book);
+    console.log(create_div_add_book);
+  });
+  return book_add;
+};
+add_book(put_btn_add_book);
