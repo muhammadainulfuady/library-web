@@ -127,14 +127,20 @@ body {
 }
 
 /* main-menu */
-.main-menu {
-  margin-top: 20px;
+/* button menu */
+section.main-menu .menu-button {
+  max-width: 50%;
+  margin: 20px auto;
 }
 
 .main-menu h3 {
   text-align: center;
   text-transform: uppercase;
-  color: white;
+  color: var(--warna-black);
+  max-width: 50%;
+  margin: 10px auto;
+  background-color: var(--warna-semi-bg);
+  padding: 10px;
 }
 
 .main-menu .menu-button {
@@ -232,7 +238,7 @@ body {
   word-spacing: 5px;
 } */
 
-@media screen and (max-width: 440px) {
+/* @media screen and (max-width: 440px) {
   .profile-users {
     max-width: 80%;
   }
@@ -240,10 +246,24 @@ body {
   .profile-users-two {
     max-width: 80%;
   }
-}
+} */
 
 @media screen and (max-width: 550px) {
+  .profile-users {
+    max-width: 90%;
+  }
+
+  .profile-users-two {
+    max-width: 90%;
+  }
   .edited-input-menu {
-    max-width: 99%;
+    max-width: 90%;
+  }
+  section.main-menu .menu-button {
+    max-width: 90%;
+    margin: 20px auto;
+  }
+  .main-menu h3 {
+    max-width: 90%;
   }
 }
