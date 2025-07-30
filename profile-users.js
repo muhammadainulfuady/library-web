@@ -101,3 +101,34 @@ const add_book = function (book_add) {
   return book_add;
 };
 add_book(put_btn_add_book);
+
+// data untuk menyimpan form pada tahun serta buku yang di masukkan oleh users ke dalam local storage
+let year_title_add_book = {};
+
+// mengambil id dari form
+let put_form_regis_add_book = document.querySelector("#regis-add-book");
+
+// kode untuk menyimpan form add book di dalam local storage
+const add_book_form = function (put_form_regis_add_book_func) {
+  put_form_regis_add_book_func.addEventListener("submit", function (e) {
+    let put_data_year_book = document.querySelector("#year-book");
+    let put_data_title_book = document.querySelector("#title-book");
+    let value_data_year_book = put_data_year_book.value;
+    let value_data_title_book = put_data_title_book.value;
+    year_title_add_book[value_data_year_book] = value_data_title_book;
+    // year_book_to_local_storage.push(value_data_year_book);
+    // title_book_to_local_storage.push(value_data_title_book);
+    // let create_p_add_book = document.createElement("p");
+    // let temp = document.querySelector(".temp");
+    // create_p_add_book.innerHTML = "heloo";
+    // temp.appendChild(create_p_add_book);
+    // console.log(year_book_to_local_storage);
+    // console.log(title_book_to_local_storage);
+    console.log(year_title_add_book);
+    localStorage.setItem("year-title", JSON.stringify(year_title_add_book));
+  });
+  return put_form_regis_add_book_func;
+};
+
+// fungsi untuk menampilkan buku2 yang telah di tarush di dalm local storage tadi
+
