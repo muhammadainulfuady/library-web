@@ -1,47 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Perpustakaan Mini</title>
-    <style>
-      body {
-        font-family: sans-serif;
-        padding: 20px;
-      }
-      input {
-        margin: 5px;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
   </head>
   <body>
-    <h1>Perpustakaan Digital</h1>
+    <label for="search">Masukkan apa kek</label>
+    <input type="search" name="search" id="search" />
+    <button type="submit" id="btn-search">Kirim</button>
+    <script>
+      let obj = {
+        name: "adi",
+        age: 18,
+        addres: "pereng kulon bungah gresik",
+      };
+      let put_input_search = document.querySelector("#search");
+      let btn_s = document.querySelector("#btn-search");
+      btn_s.addEventListener("click", function () {
+        let flag = false;
+        for (key in obj) {
+          let val = obj[key];
+          if (put_input_search.value == key) {
+            flag = true;
+          }
+        }
+        if (flag === true) {
+          delete obj[key];
+          console.log("benar");
+        }
+      });
 
-    <h2>Tambah Buku</h2>
-    <input type="text" id="input-judul" placeholder="Judul buku" />
-    <input type="number" id="input-tahun" placeholder="Tahun terbit" />
-    <button onclick="addBook()">Tambah</button>
-
-    <h2>Lihat Semua Buku</h2>
-    <button onclick="tampilkanSemuaBuku()">Tampilkan Semua</button>
-
-    <h2>Cari Buku (by Judul)</h2>
-    <input type="text" id="input-cari-judul" placeholder="Judul yang dicari" />
-    <button onclick="cariBuku()">Cari</button>
-
-    <h2>Filter Buku Setelah Tahun</h2>
-    <input type="number" id="input-cari-tahun" placeholder="Contoh: 2020" />
-    <button onclick="filterTahun()">Filter</button>
-
-    <h2>Hapus Buku</h2>
-    <input
-      type="text"
-      id="input-hapus"
-      placeholder="Judul yang ingin dihapus"
-    />
-    <button onclick="hapusBuku()">Hapus</button>
-
-    <h2>Output</h2>
-    <div id="output"></div>
-
-    <script src="script.js"></script>
+      for (i in obj) {
+        console.log(i);
+      }
+    </script>
   </body>
 </html>

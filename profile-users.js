@@ -95,11 +95,11 @@ const add_book = function (book_add) {
         create_div_add_book.classList = "edited-add-book";
         put_class_add_book.appendChild(create_div_add_book);
         create_div_add_book.innerHTML = `
-    <label for="year-book">Masukkan tahun terbit</label>
-    <input type="text" name="year-book" id="year-book" maxlength="4" required/>
-    <label for="title-book">Masukkan judul buku</label>
-    <input type="text" name="title-book" id="title-book" maxlength="100" required />
-    <button type="submit"><p>Kirim</p></button>
+        <label for="title-book">Masukkan judul buku</label>
+        <input type="text" name="title-book" id="title-book" maxlength="100" required />
+        <label for="year-book">Masukkan tahun terbit</label>
+        <input type="text" name="year-book" id="year-book" maxlength="4" required/>
+        <button type="submit"><p>Kirim</p></button>
     `;
       }
     } else {
@@ -153,19 +153,20 @@ let convert_json_to_obj_year_title_add_book = JSON.parse(
 
 // fungsi untuk menampilkan semua buku yang telah di simpan oleh users ke dalam local storage
 let found = 1;
-put_btn_show_book.addEventListener("click", function (e) {
-  let put_class_show_book = document.querySelector(".show-book");
-  let create_div_show_book = document.querySelector(".edited-show-book");
-  if (found % 2 == 1) {
-    put_class_show_book.style.display = "block";
-    if (!create_div_show_book) {
-      let put_data_local_year_title = JSON.parse(
-        localStorage.getItem("year-title")
-      );
-      let create_div_show_book = document.createElement("div");
-      create_div_show_book.classList = "edited-show-book";
-      put_class_show_book.appendChild(create_div_show_book);
-      let table_html = `
+const show_book = function (btn_show) {
+  btn_show.addEventListener("click", function (e) {
+    let put_class_show_book = document.querySelector(".show-book");
+    let create_div_show_book = document.querySelector(".edited-show-book");
+    if (found % 2 == 1) {
+      put_class_show_book.style.display = "block";
+      if (!create_div_show_book) {
+        let put_data_local_year_title = JSON.parse(
+          localStorage.getItem("year-title")
+        );
+        let create_div_show_book = document.createElement("div");
+        create_div_show_book.classList = "edited-show-book";
+        put_class_show_book.appendChild(create_div_show_book);
+        let table_html = `
         <table>
           <tr>
             <th>No</th>
@@ -173,37 +174,169 @@ put_btn_show_book.addEventListener("click", function (e) {
             <th>Tahun Terbit Buku</th>
           </tr>
       `;
-      let number_book = 1;
-      for (let key in put_data_local_year_title) {
-        table_html += `
+        let number_book = 1;
+        for (let key in put_data_local_year_title) {
+          table_html += `
           <tr>
             <td>${number_book}</td>
             <td>${put_data_local_year_title[key]}</td>
             <td>${key}</td>
           </tr>
         `;
-        number_book++;
+          number_book++;
+        }
+        table_html += `</table>`;
+        create_div_show_book.innerHTML = table_html;
+        // create_div_show_book.innerHTML = `<div class="edited-show-book">
+        //         <table>
+        //           <tr>
+        //             <th>No</th>
+        //             <th>Judul Buku</th>
+        //             <th>Tahun terbit buku</th>
+        //           </tr>
+        //           <tr>
+        //             <td>${number_book + 1}</td>
+        //             <td>${put_data_local_year_title[key]}</td>
+        //             <td>${key}</td>
+        //           </tr>
+        //         </table>
+        //       </div>`;
       }
-      table_html += `</table>`;
-      create_div_show_book.innerHTML = table_html;
-      // create_div_show_book.innerHTML = `<div class="edited-show-book">
-      //         <table>
-      //           <tr>
-      //             <th>No</th>
-      //             <th>Judul Buku</th>
-      //             <th>Tahun terbit buku</th>
-      //           </tr>
-      //           <tr>
-      //             <td>${number_book + 1}</td>
-      //             <td>${put_data_local_year_title[key]}</td>
-      //             <td>${key}</td>
-      //           </tr>
-      //         </table>
-      //       </div>`;
+    } else {
+      put_class_show_book.style.display = "none";
     }
-  } else {
-    put_class_show_book.style.display = "none";
-  }
-  console.log(put_class_show_book);
-  found += 1;
-});
+    console.log(put_class_show_book);
+    found += 1;
+  });
+  return btn_show;
+};
+show_book(put_btn_show_book);
+
+// fungsi untuk mencari buku
+const search_book = function (btn_search) {
+  let flag = 1;
+  btn_search.addEventListener("click", function () {
+    let put_class_search_book = document.querySelector(".search-book");
+    let create_div_search_book = document.querySelector(".edited-search-book");
+    if (flag % 2 == 1) {
+      put_class_search_book.style.display = "flex";
+      if (!create_div_search_book) {
+        let create_div_search_book = document.createElement("div");
+        create_div_search_book.classList = "edited-search-book";
+        create_div_search_book.innerHTML = `
+        <label for="search-book">Masukkan judul buku yang akan di cari</label>
+        <input type="text" name="search-book" id="search-book" maxlength="100" required />
+        <button type="submit" id="btn-search-js"><p>Cari</p></button>
+        `;
+        put_class_search_book.appendChild(create_div_search_book);
+      }
+    } else {
+      put_class_search_book.style.display = "none";
+    }
+    console.log(put_class_search_book);
+    flag += 1;
+    console.log(flag);
+    let put_btn_search_in_js = document.querySelector("#btn-search-js");
+    let put_input_search_book = document.querySelector("#search-book");
+    put_btn_search_in_js.addEventListener("click", function () {
+      let tanda = false;
+      for (key in year_title_add_book) {
+        let value = year_title_add_book[key];
+        if (put_input_search_book.value == value) {
+          tanda = true;
+        }
+      }
+      if (tanda == true) {
+        alert(`Buku ${put_input_search_book.value} ada di dalam daftar`);
+      } else if (put_input_search_book.value == "") {
+        alert("Harap isi buku yang akan di cari!!");
+      } else {
+        alert(`Buku ${put_input_search_book.value} tidak ada di dalam daftar`);
+        stop;
+      }
+    });
+  });
+  return btn_search;
+};
+search_book(put_btn_search_book);
+
+// fungsi untuk menghapus buku
+const del_book = function (book_del) {
+  let flag = 1;
+  book_del.addEventListener("click", function () {
+    let put_class_delete_book = document.querySelector(".delete-book");
+    let create_div_delete_book = document.querySelector(".edited-delete-book");
+
+    if (flag % 2 == 1) {
+      put_class_delete_book.style.display = "flex";
+      if (!create_div_delete_book) {
+        let create_div_delete_book = document.createElement("div");
+        create_div_delete_book.classList = "edited-delete-book";
+        create_div_delete_book.innerHTML = `
+          <label for="delete-book">Masukkan judul buku yang akan di hapus</label>
+          <input type="text" name="delete-book" id="delete-book" maxlength="100" required />
+          <button type="submit" id="btn-search-js"><p>Hapus</p></button>
+        `;
+        put_class_delete_book.appendChild(create_div_delete_book);
+      }
+    } else {
+      put_class_delete_book.style.display = "none";
+    }
+
+    let put_input_delete_book = document.querySelector("#delete-book");
+    let put_btn_delete_in_js = document.querySelector("#btn-search-js");
+
+    put_btn_delete_in_js.addEventListener("click", function () {
+      let tanda = false;
+      let data = JSON.parse(localStorage.getItem("year-title")) || {};
+
+      for (let tahun in data) {
+        if (data[tahun] === put_input_delete_book.value) {
+          delete data[tahun];
+          tanda = true;
+          break;
+        }
+      }
+
+      if (tanda) {
+        localStorage.setItem("year-title", JSON.stringify(data));
+        alert(`Buku "${put_input_delete_book.value}" dihapus`);
+      } else if (put_input_delete_book.value === "") {
+        alert("Harap isi judul buku yang akan dihapus!");
+        return;
+      } else {
+        alert(`Buku "${put_input_delete_book.value}" tidak ditemukan`);
+        return;
+      }
+
+      // Tampilkan ulang daftar buku setelah dihapus
+      document.querySelector(".show-book").innerHTML = "";
+      let number = 1;
+      for (let tahun in data) {
+        let div = document.createElement("div");
+        div.classList = "edited-show-book";
+        div.innerHTML = `
+          <table>
+            <tr>
+              <th>No</th>
+              <th>Judul Buku</th>
+              <th>Tahun Terbit</th>
+            </tr>
+            <tr>
+              <td>${number++}</td>
+              <td>${data[tahun]}</td>
+              <td>${tahun}</td>
+            </tr>
+          </table>
+        `;
+        document.querySelector(".show-book").appendChild(div);
+      }
+    });
+
+    flag += 1;
+  });
+
+  return book_del;
+};
+
+del_book(put_btn_delete_book);

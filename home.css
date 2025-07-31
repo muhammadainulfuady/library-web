@@ -246,9 +246,11 @@ section.main-menu .menu-button {
 }
 .show-book .edited-show-book table th {
   background-color: lightgray;
+  padding: 10px;
 }
 .show-book .edited-show-book table td {
   background-color: lightblue;
+  padding: 10px;
 }
 
 .edited-show-book h2 {
@@ -256,6 +258,108 @@ section.main-menu .menu-button {
   background-color: var(--reset);
   padding: 10px;
   color: white;
+}
+
+/* css mencari buku */
+.edited-search-book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  background-color: var(--warna-semi-semi-bg);
+  margin: 10px auto;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.edited-search-book label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  background-color: var(--warna-semi-bg);
+  text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
+  padding: 5px;
+  height: 30px;
+  border-radius: 10px 0px 10px 0px;
+  width: 100%;
+  font-style: italic;
+}
+
+.edited-search-book input {
+  width: 100%;
+  font-size: 20px;
+  height: 30px;
+  padding: 5px;
+  border: 2px solid var(--warna-black);
+  border-radius: 10px 0px 10px 0px;
+}
+
+.edited-search-book button {
+  padding: 10px;
+  border: 2px solid var(--warna-black);
+  background-color: var(--regis);
+  color: var(--warna-white);
+  border-radius: 10px 0px 10px 0px;
+  font-size: 16px;
+}
+
+.edited-search-book button:hover {
+  background-color: #0c9731;
+  cursor: pointer;
+}
+
+/* css menghapus buku */
+.edited-delete-book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  background-color: var(--warna-semi-semi-bg);
+  margin: 10px auto;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.edited-delete-book label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  background-color: var(--warna-semi-bg);
+  text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
+  padding: 5px;
+  height: 30px;
+  border-radius: 10px 0px 10px 0px;
+  width: 100%;
+  font-style: italic;
+}
+
+.edited-delete-book input {
+  width: 100%;
+  font-size: 20px;
+  height: 30px;
+  padding: 5px;
+  border: 2px solid var(--warna-black);
+  border-radius: 10px 0px 10px 0px;
+}
+
+.edited-delete-book button {
+  padding: 10px;
+  border: 2px solid var(--warna-black);
+  background-color: var(--regis);
+  color: var(--warna-white);
+  border-radius: 10px 0px 10px 0px;
+  font-size: 16px;
+}
+
+.edited-delete-book button:hover {
+  background-color: #0c9731;
+  cursor: pointer;
 }
 
 /* footer */
@@ -297,6 +401,18 @@ section.main-menu .menu-button {
     margin: 20px auto;
   }
   .main-menu h3 {
+    max-width: 90%;
+  }
+
+  .show-book {
+    max-width: 90%;
+  }
+
+  .edited-search-book {
+    max-width: 90%;
+  }
+
+  .edited-delete-book {
     max-width: 90%;
   }
 }
