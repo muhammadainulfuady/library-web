@@ -84,26 +84,39 @@ let put_btn_delete_book = document.querySelector("#hapus-buku");
 
 // fungsi untuk membuat tampilan di menu add_book
 const add_book = function (book_add) {
+  let flag = 1;
   book_add.addEventListener("click", function () {
     let put_class_add_book = document.querySelector("#regis-add-book");
-    let create_div_add_book = document.createElement("div");
-    create_div_add_book.classList = "edited-input-menu";
-    create_div_add_book.innerHTML = `
+    let put_class_show_book = document.querySelector(".show-book");
+    put_class_show_book.style.display = "none";
+    if (flag % 2 == 1) {
+      put_class_add_book.style.display = "flex";
+      let existing_form = document.querySelector(".edited-add-menu");
+      if (!create_div_add_book) {
+        put_class_add_book.style.display = "flex";
+        let create_div_add_book = document.createElement("div");
+        create_div_add_book.classList = "edited-add-menu";
+        put_class_add_book.appendChild(create_div_add_book);
+        create_div_add_book.innerHTML = `
     <label for="year-book">Masukkan tahun terbit</label>
     <input type="text" name="year-book" id="year-book" maxlength="4" required/>
     <label for="title-book">Masukkan judul buku</label>
     <input type="text" name="title-book" id="title-book" maxlength="100" required />
     <button type="submit"><p>Kirim</p></button>
     `;
-    put_class_add_book.appendChild(create_div_add_book);
-    console.log(put_class_add_book);
+      } else {
+        existing_form.style.display = "flex";
+      }
+    } else {
+      put_class_add_book.style.display = "none";
+    }
   });
   return book_add;
 };
 add_book(put_btn_add_book);
 
 // data untuk menyimpan form pada tahun serta buku yang di masukkan oleh users ke dalam local storage
-let year_title_add_book = {};
+let year_title_add_book = JSON.parse(localStorage.getItem("year-title")) || {};
 
 // mengambil id dari form
 let put_form_regis_add_book = document.querySelector("#regis-add-book");
@@ -111,6 +124,7 @@ let put_form_regis_add_book = document.querySelector("#regis-add-book");
 // kode untuk menyimpan form add book di dalam local storage
 const add_book_form = function (put_form_regis_add_book_func) {
   put_form_regis_add_book_func.addEventListener("submit", function (e) {
+    e.preventDefault();
     let put_data_year_book = document.querySelector("#year-book");
     let put_data_title_book = document.querySelector("#title-book");
     let value_data_year_book = put_data_year_book.value;
@@ -124,11 +138,43 @@ const add_book_form = function (put_form_regis_add_book_func) {
     // temp.appendChild(create_p_add_book);
     // console.log(year_book_to_local_storage);
     // console.log(title_book_to_local_storage);
+    let convert_json_to_obj_year_title = localStorage.setItem(
+      "year-title",
+      JSON.stringify(year_title_add_book)
+    );
+    // console.log(convert_json_to_obj_year_title);
     console.log(year_title_add_book);
-    localStorage.setItem("year-title", JSON.stringify(year_title_add_book));
   });
   return put_form_regis_add_book_func;
 };
+add_book_form(put_form_regis_add_book);
 
-// fungsi untuk menampilkan buku2 yang telah di tarush di dalm local storage tadi
+// mengambil data local storage bagian year_book dan title_book
+let put_data_local_year_title_add_book = localStorage.getItem("year-title");
+let convert_json_to_obj_year_title_add_book = JSON.parse(
+  put_data_local_year_title_add_book
+);
 
+// fungsi untuk menampilkan semua buku yang telah di simpan oleh users ke dalam local storage
+let found = 1;
+put_btn_show_book.addEventListener("click", function (e) {
+  let put_class_show_book = document.querySelector(".show-book");
+  let create_div_show_book = document.createElement("div");
+  if (found % 2 == 1) {
+    create_div_show_book.classList = "edited-show-menu";
+    put_class_show_book.appendChild(create_div_show_book);
+    create_div_show_book.innerHTML = `<h2>Berikut merupakan buku yang telah anda tambahkan</h2>
+`;
+  } else {
+  }
+
+  let put_data_local_year_title = JSON.parse(
+    localStorage.getItem("year-title")
+  );
+  console.log(put_data_local_year_title);
+  for (key in put_data_local_year_title) {
+    console.log(key, put_data_local_year_title[key]);
+  }
+  found += 1;
+  console.log(found);
+});

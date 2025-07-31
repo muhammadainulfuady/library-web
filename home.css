@@ -174,8 +174,8 @@ section.main-menu .menu-button {
   text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
 }
 
-/* menu pada button */
-.edited-input-menu {
+/* css menambahkan buku */
+.edited-add-menu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,7 +187,7 @@ section.main-menu .menu-button {
   flex-wrap: wrap;
 }
 
-.edited-input-menu label {
+.edited-add-menu label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -202,7 +202,7 @@ section.main-menu .menu-button {
   font-style: italic;
 }
 
-.edited-input-menu input {
+.edited-add-menu input {
   width: 100%;
   font-size: 20px;
   height: 30px;
@@ -211,7 +211,7 @@ section.main-menu .menu-button {
   border-radius: 10px 0px 10px 0px;
 }
 
-.edited-input-menu button {
+.edited-add-menu button {
   padding: 10px;
   border: 2px solid var(--warna-black);
   background-color: var(--regis);
@@ -220,9 +220,21 @@ section.main-menu .menu-button {
   font-size: 16px;
 }
 
-.edited-input-menu button:hover {
+.edited-add-menu button:hover {
   background-color: #0c9731;
   cursor: pointer;
+}
+
+/* css untuk  menampilkan buku */
+.edited-show-menu {
+  max-width: 50%;
+  margin: 10px auto;
+}
+.edited-show-menu h2 {
+  text-align: center;
+  background-color: var(--reset);
+  padding: 10px;
+  color: white;
 }
 
 /* footer */
@@ -256,7 +268,7 @@ section.main-menu .menu-button {
   .profile-users-two {
     max-width: 90%;
   }
-  .edited-input-menu {
+  .edited-add-menu {
     max-width: 90%;
   }
   section.main-menu .menu-button {

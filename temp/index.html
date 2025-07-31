@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Perpustakaan Mini</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      input {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Perpustakaan Digital</h1>
+
+    <h2>Tambah Buku</h2>
+    <input type="text" id="input-judul" placeholder="Judul buku" />
+    <input type="number" id="input-tahun" placeholder="Tahun terbit" />
+    <button onclick="addBook()">Tambah</button>
+
+    <h2>Lihat Semua Buku</h2>
+    <button onclick="tampilkanSemuaBuku()">Tampilkan Semua</button>
+
+    <h2>Cari Buku (by Judul)</h2>
+    <input type="text" id="input-cari-judul" placeholder="Judul yang dicari" />
+    <button onclick="cariBuku()">Cari</button>
+
+    <h2>Filter Buku Setelah Tahun</h2>
+    <input type="number" id="input-cari-tahun" placeholder="Contoh: 2020" />
+    <button onclick="filterTahun()">Filter</button>
+
+    <h2>Hapus Buku</h2>
+    <input
+      type="text"
+      id="input-hapus"
+      placeholder="Judul yang ingin dihapus"
+    />
+    <button onclick="hapusBuku()">Hapus</button>
+
+    <h2>Output</h2>
+    <div id="output"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
