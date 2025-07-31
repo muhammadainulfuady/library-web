@@ -87,15 +87,12 @@ const add_book = function (book_add) {
   let flag = 1;
   book_add.addEventListener("click", function () {
     let put_class_add_book = document.querySelector("#regis-add-book");
-    let put_class_show_book = document.querySelector(".show-book");
-    put_class_show_book.style.display = "none";
+    let create_div_add_book = document.querySelector(".edited-add-book");
     if (flag % 2 == 1) {
       put_class_add_book.style.display = "flex";
-      let existing_form = document.querySelector(".edited-add-menu");
       if (!create_div_add_book) {
-        put_class_add_book.style.display = "flex";
         let create_div_add_book = document.createElement("div");
-        create_div_add_book.classList = "edited-add-menu";
+        create_div_add_book.classList = "edited-add-book";
         put_class_add_book.appendChild(create_div_add_book);
         create_div_add_book.innerHTML = `
     <label for="year-book">Masukkan tahun terbit</label>
@@ -104,12 +101,11 @@ const add_book = function (book_add) {
     <input type="text" name="title-book" id="title-book" maxlength="100" required />
     <button type="submit"><p>Kirim</p></button>
     `;
-      } else {
-        existing_form.style.display = "flex";
       }
     } else {
       put_class_add_book.style.display = "none";
     }
+    flag += 1;
   });
   return book_add;
 };
@@ -124,7 +120,7 @@ let put_form_regis_add_book = document.querySelector("#regis-add-book");
 // kode untuk menyimpan form add book di dalam local storage
 const add_book_form = function (put_form_regis_add_book_func) {
   put_form_regis_add_book_func.addEventListener("submit", function (e) {
-    e.preventDefault();
+    // e.preventDefault();
     let put_data_year_book = document.querySelector("#year-book");
     let put_data_title_book = document.querySelector("#title-book");
     let value_data_year_book = put_data_year_book.value;
@@ -142,7 +138,7 @@ const add_book_form = function (put_form_regis_add_book_func) {
       "year-title",
       JSON.stringify(year_title_add_book)
     );
-    // console.log(convert_json_to_obj_year_title);
+    console.log(convert_json_to_obj_year_title);
     console.log(year_title_add_book);
   });
   return put_form_regis_add_book_func;
@@ -159,22 +155,55 @@ let convert_json_to_obj_year_title_add_book = JSON.parse(
 let found = 1;
 put_btn_show_book.addEventListener("click", function (e) {
   let put_class_show_book = document.querySelector(".show-book");
-  let create_div_show_book = document.createElement("div");
+  let create_div_show_book = document.querySelector(".edited-show-book");
   if (found % 2 == 1) {
-    create_div_show_book.classList = "edited-show-menu";
-    put_class_show_book.appendChild(create_div_show_book);
-    create_div_show_book.innerHTML = `<h2>Berikut merupakan buku yang telah anda tambahkan</h2>
-`;
+    put_class_show_book.style.display = "block";
+    if (!create_div_show_book) {
+      let put_data_local_year_title = JSON.parse(
+        localStorage.getItem("year-title")
+      );
+      let create_div_show_book = document.createElement("div");
+      create_div_show_book.classList = "edited-show-book";
+      put_class_show_book.appendChild(create_div_show_book);
+      let table_html = `
+        <table>
+          <tr>
+            <th>No</th>
+            <th>Judul Buku</th>
+            <th>Tahun Terbit Buku</th>
+          </tr>
+      `;
+      let number_book = 1;
+      for (let key in put_data_local_year_title) {
+        table_html += `
+          <tr>
+            <td>${number_book}</td>
+            <td>${put_data_local_year_title[key]}</td>
+            <td>${key}</td>
+          </tr>
+        `;
+        number_book++;
+      }
+      table_html += `</table>`;
+      create_div_show_book.innerHTML = table_html;
+      // create_div_show_book.innerHTML = `<div class="edited-show-book">
+      //         <table>
+      //           <tr>
+      //             <th>No</th>
+      //             <th>Judul Buku</th>
+      //             <th>Tahun terbit buku</th>
+      //           </tr>
+      //           <tr>
+      //             <td>${number_book + 1}</td>
+      //             <td>${put_data_local_year_title[key]}</td>
+      //             <td>${key}</td>
+      //           </tr>
+      //         </table>
+      //       </div>`;
+    }
   } else {
+    put_class_show_book.style.display = "none";
   }
-
-  let put_data_local_year_title = JSON.parse(
-    localStorage.getItem("year-title")
-  );
-  console.log(put_data_local_year_title);
-  for (key in put_data_local_year_title) {
-    console.log(key, put_data_local_year_title[key]);
-  }
+  console.log(put_class_show_book);
   found += 1;
-  console.log(found);
 });

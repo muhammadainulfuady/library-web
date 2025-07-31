@@ -175,7 +175,7 @@ section.main-menu .menu-button {
 }
 
 /* css menambahkan buku */
-.edited-add-menu {
+.edited-add-book {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,7 +187,7 @@ section.main-menu .menu-button {
   flex-wrap: wrap;
 }
 
-.edited-add-menu label {
+.edited-add-book label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -202,7 +202,7 @@ section.main-menu .menu-button {
   font-style: italic;
 }
 
-.edited-add-menu input {
+.edited-add-book input {
   width: 100%;
   font-size: 20px;
   height: 30px;
@@ -211,7 +211,7 @@ section.main-menu .menu-button {
   border-radius: 10px 0px 10px 0px;
 }
 
-.edited-add-menu button {
+.edited-add-book button {
   padding: 10px;
   border: 2px solid var(--warna-black);
   background-color: var(--regis);
@@ -220,17 +220,38 @@ section.main-menu .menu-button {
   font-size: 16px;
 }
 
-.edited-add-menu button:hover {
+.edited-add-book button:hover {
   background-color: #0c9731;
   cursor: pointer;
 }
 
 /* css untuk  menampilkan buku */
-.edited-show-menu {
+.show-book {
   max-width: 50%;
   margin: 10px auto;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: var(--warna-black);
+  color: var(--warna-white);
 }
-.edited-show-menu h2 {
+
+.edited-show-book table {
+  width: 100%;
+  background-color: var(--warna-white);
+  color: black;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid var(--warna-black);
+}
+.show-book .edited-show-book table th {
+  background-color: lightgray;
+}
+.show-book .edited-show-book table td {
+  background-color: lightblue;
+}
+
+.edited-show-book h2 {
   text-align: center;
   background-color: var(--reset);
   padding: 10px;
@@ -268,7 +289,7 @@ section.main-menu .menu-button {
   .profile-users-two {
     max-width: 90%;
   }
-  .edited-add-menu {
+  .edited-add-book {
     max-width: 90%;
   }
   section.main-menu .menu-button {
