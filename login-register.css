@@ -1,40 +1,33 @@
-:root {
-  --warna-bg: #0abab5;
-  --warna-semi-bg: #56dfcf;
-  --warna-semi-semi-bg: #adeed9;
-  --warna-black: #000000;
-  --warna-white: #ffffff;
-  --regis: #0bb539;
-  --reset: #c41411;
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  background-color: var(--warna-bg);
+  background: linear-gradient(135deg, #0a0f1b, #121c2f);
+  color: #f1f1f1;
 }
 
 .card-container {
   margin: 30px auto;
-  background-color: var(--warna-semi-bg);
+  background: linear-gradient(145deg, #1b2234, #101624);
   max-width: 40%;
-  border-radius: 20px 0px 20px 0px;
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(62, 226, 255, 0.3);
+  border: 1px solid #3ee2ff;
+  overflow: hidden;
 }
 
 .card-container h1 {
   font-style: italic;
-  text-shadow: 1px 1px 2px var(--warna-semi-bg);
+  text-shadow: 1px 1px 2px #3ee2ff;
   text-align: center;
-  background-color: var(--warna-semi-semi-bg);
-  overflow: hidden;
-  border-radius: 20px 0px 20px 0px;
-  color: var(--warna-white);
+  background-color: #121c2f;
+  color: #3ee2ff;
   padding: 20px;
+  border-bottom: 1px solid #3ee2ff;
 }
 
 .card-container .input-users {
@@ -42,92 +35,105 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .card-container .input-users input {
-  border: 3px solid var(--warna-semi-semi-bg);
+  border: 2px solid #3ee2ff;
   border-radius: 10px;
-  height: 38px;
-  width: 300px;
-  font-size: 20px;
-  text-align: justify;
-  font-weight: bold;
+  height: 40px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 18px;
+  background-color: #0f1525;
+  color: white;
   padding: 10px;
-}
-
-.card-container .input-users input#us-register {
-  border: 3px solid var(--warna-semi-semi-bg);
-  border-radius: 10px;
-  height: 38px;
-  width: 300px;
-  font-size: 20px;
-  text-align: justify;
   font-weight: bold;
-  padding: 10px;
 }
 
 .card-container .input-users .fa {
-  background-color: var(--warna-white);
+  background-color: #1f2737;
+  color: #3ee2ff;
   font-size: 26px;
-  padding: 0.3em;
-  border-radius: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #3ee2ff;
 }
 
+/* Tombol */
 .btn {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   margin: 15px;
+  flex-wrap: wrap;
 }
 
 .btn button.regis {
-  margin-bottom: 10px;
-  border: none;
-  background-color: var(--regis);
-  color: white;
-  font-size: 20px;
-  padding: 5px;
+  flex: 1;
+  background-color: #3ee2ff;
+  color: #121c2f;
+  font-size: 18px;
+  padding: 10px;
   border-radius: 10px;
-  cursor: pointer;
-}
-.btn button.reset {
-  margin-bottom: 10px;
   border: none;
-  background-color: var(--reset);
-  color: white;
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 10px;
   cursor: pointer;
+  font-weight: bold;
 }
 
+.btn button.regis:hover {
+  background-color: #25d3e5;
+}
+
+.btn button.reset {
+  flex: 1;
+  background-color: #e3342f;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn button.reset:hover {
+  background-color: #cc1f1a;
+}
+
+/* Link Daftar/Login */
 .register-menu a {
   text-decoration: none;
   text-align: center;
   display: flex;
-  margin: 15px;
+  justify-content: center;
+  margin: 15px auto;
   font-weight: bold;
-  color: blue;
+  color: #3ee2ff;
+  transition: 0.3s;
 }
 
+.register-menu a:hover {
+  text-decoration: underline;
+  color: #25d3e5;
+}
+
+/* Responsif */
 @media screen and (max-width: 900px) {
   .card-container {
     max-width: 70%;
   }
 }
+
 @media screen and (max-width: 545px) {
   .card-container {
     max-width: 90%;
   }
-  .card-container .input-users {
-    gap: 10px;
-  }
 }
+
 @media screen and (max-width: 353px) {
-  .card-container {
-    max-width: 90%;
-  }
   .card-container .input-users input {
-    gap: 10px;
-    max-width: 200px;
+    max-width: 100%;
   }
 }
