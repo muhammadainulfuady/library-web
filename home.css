@@ -2,417 +2,261 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-:root {
-  --warna-bg: #0abab5;
-  --warna-semi-bg: #56dfcf;
-  --warna-semi-semi-bg: #adeed9;
-  --warna-black: #000000;
-  --warna-white: #ffffff;
-  --regis: #0bb539;
-  --reset: #c41411;
-}
-
 body {
-  background-color: var(--warna-bg);
-  padding-bottom: 800px;
+  background: linear-gradient(135deg, #0a0f1b, #121c2f);
+  color: #f1f1f1;
 }
 
-/* navbar-all */
+/* Navbar */
 .navbar {
-  background-color: var(--warna-semi-semi-bg);
+  background: linear-gradient(to right, #1c1f2a, #2c2f3a);
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 10px;
+  padding: 15px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .navbar img {
   width: 50px;
   border-radius: 50%;
+  border: 2px solid #3ee2ff;
 }
 
 .navbar .search {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .navbar .search input {
-  border: 2px solid var(--warna-semi-semi-bg);
-  height: 30px;
-  max-width: 200px;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 20px;
-  font-weight: bold;
+  border: 2px solid #3ee2ff;
+  height: 35px;
+  max-width: 220px;
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 16px;
+  background-color: #10151f;
+  color: white;
 }
 
 .navbar .search button {
+  background-color: #3ee2ff;
   border: none;
-  overflow: hidden;
-  padding: 7px;
-  border-radius: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .navbar .search button i {
-  font-size: 20px;
+  font-size: 18px;
+  color: #121c2f;
 }
 
-.navbar .search button i:hover {
-  color: var(--regis);
-  cursor: pointer;
-}
-
-/* profile user */
-.profile-users {
-  background-color: #eeecec;
-  max-width: 50%;
-  margin: 10px auto;
-  padding: 10px;
-}
-.profile-users p {
-  text-align: center;
-  background-color: #d1cdcd;
-  margin: 10px;
-  max-width: 100%;
-  padding: 12px;
-  font-weight: bold;
-  border-radius: 20px 0px 30px 0px;
-}
-.profile-users img {
-  display: block;
-  margin: 0 auto;
-  width: 150px;
-  border-radius: 10px;
-}
-
-.profile-users h3 {
-  text-align: justify;
-  color: var(--regis);
-  margin: 10px;
-}
-
+/* Profile User */
+.profile-users,
 .profile-users-two {
-  background-color: #eeecec;
-  max-width: 50%;
-  margin: 10px auto;
-  padding: 10px;
+  background-color: #1a1e2e;
+  border-radius: 12px;
+  max-width: 90%;
+  margin: 15px auto;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(62, 226, 255, 0.2);
 }
 
+.profile-users p,
 .profile-users-two p {
   text-align: center;
-  background-color: #d1cdcd;
-  margin: 10px;
-  max-width: 100%;
+  background-color: #293246;
   padding: 12px;
+  border-radius: 12px;
+  margin: 10px 0;
+  color: #f0f0f0;
   font-weight: bold;
-  border-radius: 20px 0px 30px 0px;
-  color: var(--reset);
 }
 
+.profile-users img {
+  display: block;
+  margin: 10px auto;
+  width: 120px;
+  border-radius: 12px;
+  border: 2px solid #3ee2ff;
+}
+
+.profile-users h3,
 .profile-users-two h1 {
+  color: #3ee2ff;
   text-align: center;
-  color: var(--regis);
-  margin: 10px;
-  font-style: italic;
+  margin-top: 10px;
   text-transform: uppercase;
 }
 
-/* main-menu */
-/* button menu */
-section.main-menu .menu-button {
-  max-width: 50%;
-  margin: 20px auto;
-}
-
+/* Menu Section */
 .main-menu h3 {
   text-align: center;
-  text-transform: uppercase;
-  color: var(--warna-black);
-  max-width: 50%;
-  margin: 10px auto;
-  background-color: var(--warna-semi-bg);
-  padding: 10px;
+  background: linear-gradient(to right, #182032, #25334b);
+  padding: 12px;
+  margin: 20px auto;
+  color: #ffffff;
+  border-radius: 12px;
+  max-width: 90%;
 }
 
-.main-menu .menu-button {
+.menu-button {
   display: flex;
-  margin: 10px auto;
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-.main-menu .menu-button button {
-  border: 2px solid var(--warna-semi-bg);
-  background-color: var(--warna-black);
-  color: var(--warna-white);
-  text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
-  font-size: 20px;
-  padding: 20px;
-  border-radius: 10px 0px 10px 0px;
-  text-transform: capitalize;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  cursor: pointer;
-  flex-grow: 1;
+  margin: 20px auto;
+  max-width: 90%;
 }
 
-.main-menu .menu-button button:hover {
-  background-color: #1f1e1e;
-  text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
-}
-
-/* css menambahkan buku */
-.edited-add-book {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 50%;
-  background-color: var(--warna-semi-semi-bg);
-  margin: 10px auto;
-  padding: 10px;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.edited-add-book label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex: 1;
-  background-color: var(--warna-semi-bg);
-  text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
-  padding: 5px;
-  height: 30px;
-  border-radius: 10px 0px 10px 0px;
-  width: 100%;
-  font-style: italic;
-}
-
-.edited-add-book input {
-  width: 100%;
-  font-size: 20px;
-  height: 30px;
-  padding: 5px;
-  border: 2px solid var(--warna-black);
-  border-radius: 10px 0px 10px 0px;
-}
-
-.edited-add-book button {
-  padding: 10px;
-  border: 2px solid var(--warna-black);
-  background-color: var(--regis);
-  color: var(--warna-white);
-  border-radius: 10px 0px 10px 0px;
+.menu-button button {
+  background-color: #252c3a;
+  color: #ffffff;
+  padding: 15px 20px;
   font-size: 16px;
+  border-radius: 12px;
+  border: 2px solid #3ee2ff;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.edited-add-book button:hover {
-  background-color: #0c9731;
+.menu-button button:hover {
+  background-color: #1c1f2a;
+}
+
+/* Form Add/Search/Delete */
+.edited-add-book,
+.edited-search-book,
+.edited-delete-book {
+  background-color: #1c1f2a;
+  padding: 15px;
+  margin: 15px auto;
+  border-radius: 12px;
+  max-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.edited-add-book label,
+.edited-search-book label,
+.edited-delete-book label {
+  flex: 1 0 100%;
+  background-color: #3ee2ff;
+  color: #121c2f;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.edited-add-book input,
+.edited-search-book input,
+.edited-delete-book input {
+  width: 100%;
+  font-size: 18px;
+  padding: 8px;
+  border: 2px solid #3ee2ff;
+  border-radius: 8px;
+  background-color: #0f1525;
+  color: white;
+}
+
+.edited-add-book button,
+.edited-search-book button,
+.edited-delete-book button {
+  background-color: #3ee2ff;
+  color: #121c2f;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-/* css untuk  menampilkan buku */
+.edited-add-book button:hover,
+.edited-search-book button:hover,
+.edited-delete-book button:hover {
+  background-color: #25d3e5;
+}
+
+/* Tabel Buku */
 .show-book {
-  max-width: 50%;
-  margin: 10px auto;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  align-items: center;
-  background-color: var(--warna-black);
-  color: var(--warna-white);
+  max-width: 90%;
+  margin: 20px auto;
+  background-color: #1a1e2e;
+  padding: 20px;
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 0 10px rgba(62, 226, 255, 0.3);
 }
 
 .edited-show-book table {
   width: 100%;
-  background-color: var(--warna-white);
-  color: black;
-  padding: 10px;
+  border-collapse: collapse;
   text-align: center;
-  border: 2px solid var(--warna-black);
-}
-.show-book .edited-show-book table th {
-  background-color: lightgray;
-  padding: 10px;
-}
-.show-book .edited-show-book table td {
-  background-color: lightblue;
-  padding: 10px;
-}
-
-.edited-show-book h2 {
-  text-align: center;
-  background-color: var(--reset);
-  padding: 10px;
   color: white;
+  border: 1px solid #3ee2ff;
 }
 
-/* css mencari buku */
-.edited-search-book {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 50%;
-  background-color: var(--warna-semi-semi-bg);
-  margin: 10px auto;
-  padding: 10px;
-  gap: 10px;
-  flex-wrap: wrap;
+.edited-show-book table th,
+.edited-show-book table td {
+  padding: 12px;
+  border: 1px solid #3ee2ff;
 }
 
-.edited-search-book label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex: 1;
-  background-color: var(--warna-semi-bg);
-  text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
-  padding: 5px;
-  height: 30px;
-  border-radius: 10px 0px 10px 0px;
-  width: 100%;
-  font-style: italic;
+.edited-show-book table th {
+  background-color: #283143;
+  color: #3ee2ff;
 }
 
-.edited-search-book input {
-  width: 100%;
-  font-size: 20px;
-  height: 30px;
-  padding: 5px;
-  border: 2px solid var(--warna-black);
-  border-radius: 10px 0px 10px 0px;
+.edited-show-book table td {
+  background-color: #1d2436;
 }
 
-.edited-search-book button {
-  padding: 10px;
-  border: 2px solid var(--warna-black);
-  background-color: var(--regis);
-  color: var(--warna-white);
-  border-radius: 10px 0px 10px 0px;
-  font-size: 16px;
-}
-
-.edited-search-book button:hover {
-  background-color: #0c9731;
-  cursor: pointer;
-}
-
-/* css menghapus buku */
-.edited-delete-book {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 50%;
-  background-color: var(--warna-semi-semi-bg);
-  margin: 10px auto;
-  padding: 10px;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.edited-delete-book label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex: 1;
-  background-color: var(--warna-semi-bg);
-  text-shadow: 1px 4px 9px var(--warna-semi-semi-bg);
-  padding: 5px;
-  height: 30px;
-  border-radius: 10px 0px 10px 0px;
-  width: 100%;
-  font-style: italic;
-}
-
-.edited-delete-book input {
-  width: 100%;
-  font-size: 20px;
-  height: 30px;
-  padding: 5px;
-  border: 2px solid var(--warna-black);
-  border-radius: 10px 0px 10px 0px;
-}
-
-.edited-delete-book button {
-  padding: 10px;
-  border: 2px solid var(--warna-black);
-  background-color: var(--regis);
-  color: var(--warna-white);
-  border-radius: 10px 0px 10px 0px;
-  font-size: 16px;
-}
-
-.edited-delete-book button:hover {
-  background-color: #0c9731;
-  cursor: pointer;
-}
-
-/* footer */
-/* section.footer {
-  background-color: var(--warna-semi-semi-bg);
-  color: var(--warna-white);
-  text-shadow: 1px 4px 9px var(--warna-black);
+/* Footer */
+section.footer {
+  background-color: #1c1f2a;
   text-align: center;
   padding: 20px;
-  text-transform: capitalize;
-  font-size: 15px;
+  margin-top: 100px;
+  color: #3ee2ff;
+  text-shadow: 0 0 4px #3ee2ff;
   font-weight: bold;
-  word-spacing: 5px;
-} */
+  font-size: 14px;
+  border-top: 2px solid #3ee2ff;
+  text-transform: capitalize;
+}
 
-/* @media screen and (max-width: 440px) {
-  .profile-users {
-    max-width: 80%;
-  }
-
-  .profile-users-two {
-    max-width: 80%;
-  }
-} */
-
-@media screen and (max-width: 550px) {
-  .profile-users {
-    max-width: 90%;
-  }
-
-  .profile-users-two {
-    max-width: 90%;
-  }
-  .edited-add-book {
-    max-width: 90%;
-  }
-  section.main-menu .menu-button {
-    max-width: 90%;
-    margin: 20px auto;
-  }
-  .main-menu h3 {
-    max-width: 90%;
-  }
-
+/* Responsive */
+@media screen and (max-width: 650px) {
+  .profile-users,
+  .profile-users-two,
+  .edited-add-book,
+  .edited-search-book,
+  .edited-delete-book,
+  .menu-button,
+  .main-menu h3,
   .show-book {
-    max-width: 90%;
+    max-width: 95%;
   }
 
-  .edited-search-book {
-    max-width: 90%;
+  .navbar .search input {
+    max-width: 150px;
   }
 
-  .edited-delete-book {
-    max-width: 90%;
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
   }
 }
